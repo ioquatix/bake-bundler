@@ -33,7 +33,7 @@ def release(remote: nil)
 	path = self.build
 	
 	if @helper.gem_push?
-		puts "@helper.rubygem_push(path)"
+		@helper.rubygem_push(path)
 	end
 end
 
