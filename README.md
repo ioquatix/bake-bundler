@@ -38,7 +38,7 @@ bake bundler:release
 
 ## See Also
 
-- [Bake](https://github.com/socketry/bake) — The bake task execution tool.
+- [Bake](https://github.com/ioquatix/bake) — The bake task execution tool.
 
 ## License
 
