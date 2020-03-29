@@ -8,6 +8,8 @@ def initialize(context)
 	@built_gem_path = nil
 end
 
+attr :helper
+
 # Build the gem into the pkg directory.
 def build
 	@built_gem_path ||= @helper.build_gem
@@ -37,8 +39,3 @@ def release(remote: nil)
 	end
 end
 
-private
-
-def instance
-	
-end
