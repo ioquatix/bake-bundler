@@ -2,16 +2,22 @@
 # Increment the patch number of the current version ("major.minor.patch").
 def patch
 	increment([nil, nil, 1], message: "Patch version bump.")
+	
+	call('bundler:release')
 end
 
 # Increment the patch number of the current version ("major.minor.patch").
 def minor
 	increment([nil, 1, 0], message: "Minor version bump.")
+	
+	call('bundler:release')
 end
 
 # Increment the patch number of the current version ("major.minor.patch").
 def major
 	increment([1, 0, 0], message: "Major version bump.")
+	
+	call('bundler:release')
 end
 
 VERSION_PATTERN = /VERSION = ['"](?<value>\d+\.\d+\.\d+)(?<pre>.*?)['"]/
