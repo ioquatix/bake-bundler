@@ -1,17 +1,17 @@
 
 # Increment the patch number of the current version ("major.minor.patch").
 def patch
-	publish([nil, nil, 1], message: "Patch version bump.")
+	release([nil, nil, 1], message: "Patch version bump.")
 end
 
 # Increment the patch number of the current version ("major.minor.patch").
 def minor
-	publish([nil, 1, 0], message: "Minor version bump.")
+	release([nil, 1, 0], message: "Minor version bump.")
 end
 
 # Increment the patch number of the current version ("major.minor.patch").
 def major
-	publish([1, 0, 0], message: "Major version bump.")
+	release([1, 0, 0], message: "Major version bump.")
 end
 
 VERSION_PATTERN = /VERSION = ['"](?<value>\d+\.\d+\.\d+)(?<pre>.*?)['"]/
@@ -66,7 +66,7 @@ end
 
 private
 
-def publish(*arguments, **options)
+def release(*arguments, **options)
 	release = context.lookup('bundler:release')
 	helper = release.instance.helper
 	
