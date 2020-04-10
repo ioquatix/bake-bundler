@@ -1,15 +1,15 @@
 
-# Increment the patch number of the current version ("major.minor.patch").
+# Increment the patch number of the current version.
 def patch
 	release([nil, nil, 1], message: "Patch version bump.")
 end
 
-# Increment the patch number of the current version ("major.minor.patch").
+# Increment the minor number of the current version.
 def minor
 	release([nil, 1, 0], message: "Minor version bump.")
 end
 
-# Increment the patch number of the current version ("major.minor.patch").
+# Increment the major number of the current version.
 def major
 	release([1, 0, 0], message: "Major version bump.")
 end
