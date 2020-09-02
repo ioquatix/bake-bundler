@@ -2,43 +2,49 @@
 
 Provides bake tasks for releasing gems using bundler.
 
+[![Development Status](https://github.com/ioquatix/bake-bundler/workflows/Development/badge.svg)](https://github.com/ioquatix/bake-bundler/actions?workflow=Development)
+
 ## Installation
 
-```
+~~~ shell
 bundle add bake-bundler
-```
+~~~
 
 ## Usage
 
 ### Build
 
-```
-bake bundler:build
-```
+~~~ shell
+$ bake bundler:build
+~~~
 
 ### Install
 
-```
-bake bundler:install
-```
+~~~ shell
+$ bake bundler:install
+~~~
 
 ### Release
 
-```
-bake bundler:release
-```
+~~~ shell
+$ bake bundler:release
+
+$ bake bundler:release:patch
+$ bake bundler:release:minor
+$ bake bundler:release:major
+~~~
 
 ## Contributing
 
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+1.  Fork it
+2.  Create your feature branch (`git checkout -b my-new-feature`)
+3.  Commit your changes (`git commit -am 'Add some feature'`)
+4.  Push to the branch (`git push origin my-new-feature`)
+5.  Create new Pull Request
 
 ## See Also
 
-- [Bake](https://github.com/ioquatix/bake) — The bake task execution tool.
+  - [Bake](https://github.com/ioquatix/bake) — The bake task execution tool.
 
 ## License
 

@@ -18,8 +18,8 @@ VERSION_PATTERN = /VERSION = ['"](?<value>\d+\.\d+\.\d+)(?<pre>.*?)['"]/
 
 # Scans the files listed in the gemspec for a file named `version.rb`. Extracts the VERSION constant and updates it according to the version bump. Commits the changes to git using the specified message.
 #
-# @param bump [Array(Integer | Nil)] the version bump to apply before publishing.
-# @param message [String] the git commit message to use.
+# @parameter bump [Array(Integer | Nil)] the version bump to apply before publishing, e.g. `0,1,0` to increment minor version number.
+# @parameter message [String] the git commit message to use.
 def increment(bump, message: "Bump version.")
 	release = context.lookup('bundler:release')
 	helper = release.instance.helper

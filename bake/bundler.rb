@@ -16,7 +16,7 @@ def build
 end
 
 # Build and install the gem into system gems.
-# @param local [Boolean] only use locally available caches.
+# @parameter local [Boolean] only use locally available caches.
 def install(local: false)
 	path = self.build
 	
