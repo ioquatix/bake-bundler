@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
 	
 	spec.summary = "Provides recipes for bundler."
 	spec.authors = ["Samuel Williams"]
-	spec.license = nil
+	spec.license = "MIT"
 	
 	spec.homepage = "https://github.com/ioquatix/bake-bundler"
 	
