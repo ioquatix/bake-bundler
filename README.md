@@ -6,33 +6,33 @@ Provides bake tasks for releasing gems using bundler.
 
 ## Installation
 
-~~~ shell
+``` shell
 bundle add bake-bundler
-~~~
+```
 
 ## Usage
 
 ### Build
 
-~~~ shell
+``` shell
 $ bake bundler:build
-~~~
+```
 
 ### Install
 
-~~~ shell
+``` shell
 $ bake bundler:install
-~~~
+```
 
 ### Release
 
-~~~ shell
+``` shell
 $ bake bundler:release
 
 $ bake bundler:release:patch
 $ bake bundler:release:minor
 $ bake bundler:release:major
-~~~
+```
 
 ## Contributing
 
