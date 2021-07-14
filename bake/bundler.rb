@@ -13,6 +13,11 @@ attr :helper
 # Build the gem into the pkg directory.
 def build
 	@built_gem_path ||= @helper.build_gem
+	
+	gemspec = @helper.gemspec
+	
+	$stdout.puts "Your gem contains the following files:"
+	pp gemspec.files
 end
 
 # Build and install the gem into system gems.
