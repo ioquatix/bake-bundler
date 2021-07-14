@@ -70,9 +70,43 @@ def release(*arguments, **options)
 	release = context.lookup('bundler:release')
 	helper = release.instance.helper
 	
-	helper.guard_clean
+	changes = readlines("git", "status", "--porcelain")
 	
-	increment(*arguments, **options)
-	
-	release.call
+	if changes.any?
+		puts "Uncommitted modifications detected:"
+		changes.each do |change|
+			puts change
+		end
+	else
+		last_commit = readlines("git", "log", "-1", "--oneline").first
+		
+		unless last_commit =~ /version bump|bump version/i
+			increment(*arguments, **options)
+		end
+		
+		release.call
+	end
+end
+
+def shell(*arguments)
+	IO.pipe do |input, output|
+		pid = Process.spawn(*arguments, out: output)
+		output.close
+		
+		begin
+			yield input
+		ensure
+			pid, status = Process.wait2(pid)
+			
+			unless status.success?
+				raise "Failed to execute #{arguments} -> #{status}"
+			end
+		end
+	end
+end
+
+def readlines(*arguments)
+	shell(*arguments) do |output|
+		return output.readlines
+	end
 end
